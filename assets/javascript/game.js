@@ -1,4 +1,6 @@
-$(document).ready(function() {
+$( document ).ready(function(){
+
+	//click event to pick a theorist
 	var theorist = new Array(4);
 	theorist[0] = new Theorist ('Horkheimer', 'horkheimer.jpg', 120, 16, 23);
 	theorist[1] = new Theorist ('Adorno', 'adorno.jpg', 130, 18, 24);
@@ -23,13 +25,14 @@ $(document).ready(function() {
 	}
 
 	function showTheoristPool() {
-		$('#theorist').empty();
+		//$('#theorist').empty();
+		var ctr;
 		for (ctr = 0; ctr < theorist.length; ctr++) {
 			// Check to see if they have been selected to play first
 			// Will also need to check if they have been eliminated
-			if (theorist[ctr].status == 'available') {
-				var $newTriver = $('<div>')
-					.addClass('theorist col-sm-3')
+			if (theorist[ctr].status == 'opponent') {
+				var $newTheorist = $('<div>')
+					//.addClass('theorist col-sm-3')
 					.attr('theorist-id', ctr)
 					.html('<span class="name">'+ theorist[ctr].name + '</span><img src="../assets/images/'+ theorist[ctr].image +'"><span class="points">('+ theorist[ctr].health + ')</span>');
 					// $newTheorist.on('click', selectTheorist(ctr));
