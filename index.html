@@ -11,67 +11,43 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <!-- Optional theme -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-  <link href="assets/css/sticky-footer.css" type="text/css" rel="stylesheet">
+  <!-- sticky footer -->
+  <!--<link href="assets/css/sticky-footer.css" type="text/css" rel="stylesheet"> -->
+
+  <!-- Site specific overrides -->
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
-
-<body data-pinterest-extension-installed="cr1.39.1">
-
-  <header>
-    <h1 class="title"><strong><em>Critical Theory Battle</em></strong></h1>
-  </header>
-
+<body>
   <div class="container">
+    <h1 class="title"><strong>Critical Theory Battle</strong></h1>
     <div id="characters" class="characters"></div>
     <div id="opponents" class="row">
-      <div id="action" class="col-sm-12">Select your critical theorist!</div>
-        <div id="theorist" class="theorist col-sm-12">
-          <div class="theorist col-sm-3" theorist-id="0">
-            <span class="name">Horkheimer</span>
-            <img src="assets/images/horkheimer.jpg" height=150 width=150>
-            <span class="points">(120)</span>
-          </div>
-          <div class="theorist col-sm-3" theorist-id="1">
-            <span class="name">Adorno</span>
-            <img src="assets/images/adorno.jpg" height=150 width=220>
-            <span class="points">(130)</span>
-          </div>
-          <div class="theorist col-sm-3" theorist-id="2">
-            <span class="name">Marcuse</span>
-            <img src="assets/images/marcuse.jpg" height=150 width=220>
-            <span class="points">(140)</span>
-          </div>
-          <div class="theorist col-sm-3" theorist-id="3">
-            <span class="name">Habermas</span>
-            <img src="assets/images/habermas.jpg" height=150 width=220>
-            <span class="points">(150)</span>
-          </div>
-        </div>
+      <div id="action" class="col-sm-12">Select your theorist!</div>
+      <div id="theorists" class="theorists col-sm-12"></div>
     </div>
-    <div id="battle" class="row">
-        <div id="battle-header" class="row">
-          <div id="player-header" class="col-sm-offset-1 col-sm-3"></div>>
+    <div id="debate" class="row">
+        <div id="debate-header" class="row">
+          <div id="player-header" class="col-sm-offset-1 col-sm-3"></div>
           <div id="opponent-header" class="col-sm-offset-4 col-sm-3"></div>
         </div>
       <div id="player"></div>
       <div id="versus" class="col-sm-offset-1 col-sm-2"></div>
-        <img src="assets/images/vs3.png" height=80 width=80>
       <div id="opponent"></div>
-    </div>  
-  </div>
-  <!--end container-->
-  <footer class="footer">
-    <div class="container">
-      <small>&copy;Copyright Jennifer Pemberton 2016</small>
-    </div>
-  </footer>
+    </div> 
+    <div id="defeated" class="row">
+      <div id="defeated-header" class="col-sm-12">Defeated Row</div>
+      <div id="lost" class="col-sm-12"></div>
+    </div> 
+  </div><!--end container-->
+  <!-- <footer>
+      <span class="pull-right"><small>&copy;Copyright Jennifer Pemberton 2016</small></span>
+  </footer> -->
 
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script></script>
+  <!-- jQuery 2.2.4 -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   <!-- Local javascript operations file -->
   <script src="assets/javascript/game.js"></script>
-
 </body>
 </html>

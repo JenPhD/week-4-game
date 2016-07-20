@@ -1,8 +1,12 @@
 body {
+	background-color: #001;
 	background-image: url("../images/brainwashed-0.jpg");
 	background-repeat: no-repeat;
 	background-size: 100%;
 	font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;;
+}
+
+.container {
 }
 
 h1 {color: #f90606; 
@@ -13,10 +17,6 @@ h1 {color: #f90606;
 	margin-top: 40px; 
 	text-align: left;
 	text-shadow: 2px 2px #ffbf00; 
-}
-
-.container {
-
 }
 
 .theorist .opponent .player .lostTheorist{
@@ -46,9 +46,9 @@ h1 {color: #f90606;
 	text-shadow: 2px 2px black;
 }
 
-#theorist, #player-header, #opponent-header #vs-header{
+#theorist, #player-header, #opponent-header, #defeated-header {
 	color: #0000ff;
-	font-size: 30px;
+	font-size: 15px;
 	text-align: center;
 }
 
@@ -72,7 +72,7 @@ h3 {
 	text-align: center;
 }
 
-#battle h2 {
+#debate h2 {
 	background-color: rgba(0, 0, 0, 0.3);
 	border-radius: 15px;
 	color: white;
@@ -83,12 +83,5 @@ h3 {
 }
 
 .footer {
-	background-color: #f90606;
-	border-top: solid;
-	border-color: #ffbf00;
-	color: white;
-	display: flex;
-  	justify-content: center;
-  	align-items: center;
-  	text-align: center;
+	
   	}
