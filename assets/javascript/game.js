@@ -1,4 +1,5 @@
-$(document).ready(function() {
+$(document).ready(function() 
+{
 
 //fade in header
 $(':header').hide().fadeIn(1500);
@@ -39,7 +40,7 @@ console.log(theorists);
 					.addClass('theorist col-sm-3')
 					.attr('theorist-id', ctr)
 					.html('<span class="name">'+ theorists[ctr].name + '</span><img src="assets/images/'+ theorists[ctr].image +'"><span class="points">('+ theorists[ctr].health + ')</span>');
-					// $newTheorist.on('click', selectTheorist(ctr));
+					//$newTheorist.on('click', selectTheorist(ctr));
 				$('#theorists').append($newTheorist);				
 			}
 		}
@@ -63,7 +64,7 @@ console.log(theorists);
 			.html('<span class="name">'+ theorists[index].name + ' (' + theorists[index].health + ')</span><img src="assets/images/'+ theorists[index].image +'"><span class="points">'+ 'Attack ' + theorists[index].attack + ' | Counter ' +  + theorists[index].counter +'</span>');
 		$('#opponent').html($newOpponent);
 		$('#opponent-header').html('Opponent');
-		$('#versus').html('<img src="assets/images/debate.jpg"><h3>Go!<h3>');
+		$('#versus').html('<img src="assets/images/debate.jpg"><h3>Click the podium to debate!<h3>');
 	}
 
 	function debate() {
@@ -102,7 +103,7 @@ console.log(theorists);
 	}
 
 	function playerWins() {
-		$('#debate').html('<h2>Winner, winner, chicken dinner!!<span class="name">'+ theorists[player].name + '</span><img src="assets/images/'+ theorists[player].image +'"><span class="points"> </span></h2>');
+		$('#debate').html('<h2>You win, and we all win when we use deliberation and argumentation instead of violence in the pursuit of truth and justice!<span class="name">'+ theorists[player].name + '</span><img src="assets/images/'+ theorists[player].image +'"><span class="points"> </span></h2>');
 	}
 	function refreshDisplay () {
 		showTheoristPool();
@@ -119,8 +120,8 @@ console.log(theorists);
 		if (opponent != -1) {
 			showOpponent(opponent);
 			if (defeatedRow.length < 2) {
-				// Don't show this for the final race
-				$('#action').html("One minute debate warning!");	
+				// Don't show this for the final debate
+				$('#action').html("Choose another opponent!");	
 			}
 		}
 	}

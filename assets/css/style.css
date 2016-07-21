@@ -9,8 +9,9 @@ body {
 .container {
 }
 
-h1 {color: #f90606; 
-	font-family: "Great Vibes", cursive;
+h1 {
+	color: #f90606; 
+	font-family: "Great Vibes";
 	font-size: 60px; 
 	font-weight: normal;
 	margin-left: 20px;
@@ -40,7 +41,7 @@ h1 {color: #f90606;
 
 #action {
 	color: #0000ff;
-	font-family: "Great Vibes", cursive;
+	font-family: "Great Vibes";
 	font-size: 30px;
 	text-align: center;
 	text-shadow: 2px 2px black;
@@ -57,6 +58,8 @@ h1 {color: #f90606;
 }
 
 .points, .name {
+	background-color: black;
+	color: white;
 	clear: both;
 	display: block;
 	margin: 5px;
