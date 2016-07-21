@@ -1,17 +1,10 @@
-$(document).ready(function() 
-{
-
-//fade in header
-$(':header').hide().fadeIn(1500);
-$('#action').hide().fadeIn(1500);
+$(document).ready(function () {
 
 	var theorists = new Array(4);
 	theorists[0] = new Theorist ('Horkheimer', 'horkheimer.jpg', 120, 16, 23);
 	theorists[1] = new Theorist ('Adorno', 'adorno.jpg', 130, 18, 24);
 	theorists[2] = new Theorist ('Marcuse', 'marcuse.jpg', 140, 20, 35);
 	theorists[3] = new Theorist ('Habermas', 'habermas.jpg', 150, 22, 59);
-
-console.log(theorists);
 
 	var hitpoints = [120, 130, 140, 150];
 
@@ -29,6 +22,10 @@ console.log(theorists);
 		this.counter = counter;
 		this.status = 'available';
 	}
+
+	//fade in header
+	$(':header').hide().fadeIn(1500);
+	$('#action').hide().fadeIn(1500);
 
 	function showTheoristPool() {
 		$('#theorists').empty();
@@ -99,12 +96,15 @@ console.log(theorists);
 	}
 
 	function gameOver() {
-		$('#debate').html("<h2>Game Over<h2>");
+		$('#debate').html("<h2>Game Over<h2>" + '<button type="button" button class="btn btn-info" onClick="window.location.reload()">reset</button>');
+	
 	}
 
 	function playerWins() {
-		$('#debate').html('<h2>You win, and we all win when we use deliberation and argumentation instead of violence in the pursuit of truth and justice!<span class="name">'+ theorists[player].name + '</span><img src="assets/images/'+ theorists[player].image +'"><span class="points"> </span></h2>');
+		$('#debate').html('<h2>You win, and we all win when we use deliberation in the pursuit of truth and justice!<span class="name">'+ theorists[player].name + '</span><img src="assets/images/'+ theorists[player].image +'"><span class="points"> </span><button type="button" button class="btn btn-info" onClick="window.location.reload()">reset</button></h2>');
 	}
+
+
 	function refreshDisplay () {
 		showTheoristPool();
 		if (player != -1) {
@@ -132,10 +132,12 @@ console.log(theorists);
 					var $lostTheorist = $('<div>')
 						.addClass('lostTheorist col-sm-3 ')
 						.html('<span class="name">'+ theorists[ctr].name + '</span><img src="assets/images/'+ theorists[ctr].image +'"><span> </span>');
-					$('#lost').append($lostTheorist);	
+					$('#lost').append($lostTheorist);
 				}
 		}
-	}
+		$("#defeated").hide();
+	}	
+
 	function selectTheorist(index) {
 		if (player === -1 && opponent === -1 ) {
 			// Nothing selected so this is the player
