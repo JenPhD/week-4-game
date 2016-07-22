@@ -1,18 +1,19 @@
 $(document).ready(function () {
 
 	var theorists = new Array(4);
-	theorists[0] = new Theorist ('Horkheimer', 'horkheimer.jpg', 120, 16, 23);
-	theorists[1] = new Theorist ('Adorno', 'adorno.jpg', 130, 18, 24);
-	theorists[2] = new Theorist ('Marcuse', 'marcuse.jpg', 140, 20, 35);
-	theorists[3] = new Theorist ('Habermas', 'habermas.jpg', 150, 22, 59);
+	theorists[0] = new Theorist ('Horkheimer', 'horkheimer.jpg', 100, 30, 5);
+	theorists[1] = new Theorist ('Adorno', 'adorno.jpg', 120, 20, 10);
+	theorists[2] = new Theorist ('Marcuse', 'marcuse.jpg', 150, 10, 20);
+	theorists[3] = new Theorist ('Habermas', 'habermas.jpg', 180, 5, 25);
 
-	var hitpoints = [120, 130, 140, 150];
+	var hitpoints = [100, 120, 150, 180];
 
 	var player = -1;
 	var opponent = -1;
 	var defeatedRow = new Array;  // Array of defeated opponents
 	var roundOver = false;
 	var numWins = 0;
+	var clicks = 1;
 
 	function Theorist(name, image, health, attack, counter) {
 		this.name = name;
@@ -76,7 +77,7 @@ $(document).ready(function () {
 			theorists[player].health = 0;
 			gameOver();
 		}
-		theorists[player].attack = theorists[player].attack + 5;
+		theorists[player].attack = theorists[player].attack + theorists[player].attack/clicks;
 		refreshDisplay();
 	}
 
@@ -87,7 +88,7 @@ $(document).ready(function () {
 			playerWins();
 		}
 		opponent = -1;
-		theorists[player].health = hitpoints[player];
+		theorists[player].health = theorists[player].health;
 		$('#opponent').empty();		
 		refreshDisplay();
 		$('#lost').empty();
@@ -152,6 +153,7 @@ $(document).ready(function () {
 	$('#versus').on('click', function () {
 		if (player > -1 && opponent > -1) {
 			debate();
+			clicks++;
 		}
 	});
 
