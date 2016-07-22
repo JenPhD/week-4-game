@@ -1,6 +1,6 @@
 body {
 	background-color: #001;
-	background-image: url("../images/brainwashed-0.jpg");
+	background-image: url("../images/brainwashed.gif");
 	background-repeat: no-repeat;
 	background-size: 100%;
 	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
@@ -99,4 +99,6 @@ h2 > .name {
 
 .footer {
 	
+	margin-right: 10px;
+
   	}

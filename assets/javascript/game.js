@@ -37,7 +37,6 @@ $(document).ready(function () {
 					.addClass('theorist col-sm-3')
 					.attr('theorist-id', ctr)
 					.html('<span class="name">'+ theorists[ctr].name + '</span><img src="assets/images/'+ theorists[ctr].image +'"><span class="points">Health:'+ theorists[ctr].health + '</span>');
-					//$newTheorist.on('click', selectTheorist(ctr));
 				$('#theorists').append($newTheorist);				
 			}
 		}
@@ -96,11 +95,11 @@ $(document).ready(function () {
 	}
 
 	function gameOver() {
-		$('#debate').html("<h2>Game Over<h2>" + '<button type="button" button class="btn btn-danger" onClick="window.location.reload()">reset</button>');
+		$('#debate').html("<h2>Game Over<h2>" + '<button type="button" button class="btn btn-danger" onClick="window.location.reload()">debate again!</button>');
 	}
 
 	function playerWins() {
-		$('#debate').html('<h2>You win, and we all win when we use deliberation in the pursuit of truth and justice!<span class="name">'+ theorists[player].name + '</span><img src="assets/images/'+ theorists[player].image +'"><span class="points"> </span><button type="button" button class="btn btn-danger" onClick="window.location.reload()">reset</button></h2>');
+		$('#debate').html('<h2>You win, and we all win when we use deliberation in the pursuit of truth and justice!<span class="name">'+ theorists[player].name + '</span><img src="assets/images/'+ theorists[player].image +'"><span class="points"> </span><button type="button" button class="btn btn-danger" onClick="window.location.reload()">debate again!</button></h2>');
 	}
 
 
