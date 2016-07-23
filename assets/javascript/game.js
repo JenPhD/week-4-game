@@ -1,16 +1,16 @@
 $(document).ready(function () {
 
 	var theorists = new Array(4);
-	theorists[0] = new Theorist ('Horkheimer', 'horkheimer.jpg', 100, 30, 5);
-	theorists[1] = new Theorist ('Adorno', 'adorno.jpg', 120, 20, 10);
-	theorists[2] = new Theorist ('Marcuse', 'marcuse.jpg', 150, 10, 20);
-	theorists[3] = new Theorist ('Habermas', 'habermas.jpg', 180, 5, 25);
+	theorists[0] = new Theorist ('Horkheimer', 'horkheimer.jpg', 100, 18, 8);
+	theorists[1] = new Theorist ('Adorno', 'adorno.jpg', 120, 12, 5);
+	theorists[2] = new Theorist ('Marcuse', 'marcuse.jpg', 150, 8, 16);
+	theorists[3] = new Theorist ('Habermas', 'habermas.jpg', 180, 4, 20);
 
 	var hitpoints = [100, 120, 150, 180];
 
 	var player = -1;
 	var opponent = -1;
-	var defeatedRow = new Array;  // Array of defeated opponents
+	var defeatedRow = new Array;  
 	var roundOver = false;
 	var numWins = 0;
 	var clicks = 1;
@@ -72,15 +72,20 @@ $(document).ready(function () {
 			theorists[opponent].health = 0;
 			theorists[opponent].status = 'lost';
 			nextRound();
-		} else if (theorists[player].health < 1) {
+		} else if (theorists[player].health <= 0) {
 			// Round over, opponent wins
-			theorists[player].health = 0;
+			//theorists[player].health = 0;
 			gameOver();
 		}
 		theorists[player].attack = theorists[player].attack + theorists[player].attack/clicks;
 		refreshDisplay();
 	}
 
+	function gameOver() {
+		$('#debate').html("<h2>Game Over<h2>" + '<button type="button" button class="btn btn-danger" onClick="window.location.reload()">debate again!</button>');
+	}
+
+	
 	function nextRound() {
 		defeatedRow.push(opponent);
 		numWins++;
@@ -88,21 +93,16 @@ $(document).ready(function () {
 			playerWins();
 		}
 		opponent = -1;
-		theorists[player].health = theorists[player].health;
+		//theorists[player].health = theorists[player].health;
 		$('#opponent').empty();		
 		refreshDisplay();
 		$('#lost').empty();
 		showDefeatedRow();		
 	}
 
-	function gameOver() {
-		$('#debate').html("<h2>Game Over<h2>" + '<button type="button" button class="btn btn-danger" onClick="window.location.reload()">debate again!</button>');
-	}
-
 	function playerWins() {
 		$('#debate').html('<h2>You win, and we all win when we use deliberation in the pursuit of truth and justice!<span class="name">'+ theorists[player].name + '</span><img src="assets/images/'+ theorists[player].image +'"><span class="points"> </span><button type="button" button class="btn btn-danger" onClick="window.location.reload()">debate again!</button></h2>');
 	}
-
 
 	function refreshDisplay () {
 		showTheoristPool();
@@ -155,6 +155,7 @@ $(document).ready(function () {
 			debate();
 			clicks++;
 		}
+
 	});
 
 	showTheoristPool();
