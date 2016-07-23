@@ -1,10 +1,10 @@
 $(document).ready(function () {
 
 	var theorists = new Array(4);
-	theorists[0] = new Theorist ('Horkheimer', 'horkheimer.jpg', 100, 18, 8);
-	theorists[1] = new Theorist ('Adorno', 'adorno.jpg', 120, 12, 5);
-	theorists[2] = new Theorist ('Marcuse', 'marcuse.jpg', 150, 8, 16);
-	theorists[3] = new Theorist ('Habermas', 'habermas.jpg', 180, 4, 20);
+	theorists[0] = new Theorist ('Horkheimer', 'horkheimer.jpg', 100, 30, 5);
+	theorists[1] = new Theorist ('Adorno', 'adorno.jpg', 120, 20, 10);
+	theorists[2] = new Theorist ('Marcuse', 'marcuse.jpg', 150, 10, 22);
+	theorists[3] = new Theorist ('Habermas', 'habermas.jpg', 180, 5, 25);
 
 	var hitpoints = [100, 120, 150, 180];
 
@@ -72,11 +72,12 @@ $(document).ready(function () {
 			theorists[opponent].health = 0;
 			theorists[opponent].status = 'lost';
 			nextRound();
-		} else if (theorists[player].health <= 0) {
+		} else if(theorists[player].health < 1) {
 			// Round over, opponent wins
 			//theorists[player].health = 0;
 			gameOver();
 		}
+		clicks++;
 		theorists[player].attack = theorists[player].attack + theorists[player].attack/clicks;
 		refreshDisplay();
 	}
@@ -153,7 +154,6 @@ $(document).ready(function () {
 	$('#versus').on('click', function () {
 		if (player > -1 && opponent > -1) {
 			debate();
-			clicks++;
 		}
 
 	});
