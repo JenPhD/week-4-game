@@ -13,7 +13,7 @@ $(document).ready(function () {
 	var defeatedRow = new Array;  
 	var roundOver = false;
 	var numWins = 0;
-	var clicks = 1;
+	var clicks = 0;
 
 	function Theorist(name, image, health, attack, counter) {
 		this.name = name;
